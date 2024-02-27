@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(245, 242, 242);
+            background-image: url(./image/pexels-photo-220182.jpeg)
+        }
+        nav{
+            display: flex;
+            width: 95%;
+            background-color: rgb(13, 187, 218);
+            border-radius: 5px;
+            margin: auto;
+        }
+        .logo{
+            margin-left: 20px;
+            display: flex;
+            align-items: center; 
+            gap: 20px;
+            font-size: 30px;
+
+        }
+        .navlinks{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+
+        }
+       
+        nav div img{
+            width: 25%;
+            border-radius: 50%;
+            
+        }
+        .navlinks a{
+           text-decoration: none;
+           color: white;
+           font-size: 30px;
+          
+        }
+        .navsearch input{
+            width: 350px;
+            height: 30px;
+            border-radius: 5px;
+            border:none;
+            margin-top: 25px;
+        }
+        .navsearch button{
+            width: 80px;
+            height: 30px;
+            margin: 30px;
+            border-radius: 5px;
+            border:none;
+            margin-top: 25px;
+            font-weight: bolder;
+        }
+        .navsearch button:hover{
+            background-color: black;
+            color: white;
+        }
+       
+        span{
+            display: none;
+        }
+        section{
+        
+            display: flex;
+            width: 95%;
+            height:auto;
+            /* border: 1px solid; */
+            
+            border-radius: 5px;
+           }
+        .sectionheading {
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid; */
+            font-size: 30px;
+            width: 50%;
+            padding: 50px;
+            /* align-items: center; */
+            justify-content: center;
+            
+           
+        }
+        .sectionheading button{
+            width: 20%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(123, 216, 216);
+
+        }
+        .sectionheading button:hover{
+            background-color: white;
+
+        }
+        .sectionimg{
+    
+            /* border: 1px solid; */
+            width: 50%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            
+        }
+        .sectionimg div{
+            /* border: 1px solid ; */
+            margin: 30px;
+            padding: 80px;
+            border-radius: 10px;
+            border: none;
+            /* transform: scale(1.5);  */
+            background-color: white;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        }
+        .sectionimg div:hover{
+            background-color: aqua;
+            transition: all 1s ease-in-out;
+          transform: scale(1.2); 
+         color: white;
+          transform: translate(40px,40px);
+          
+        }
+
+        .sectionimg img{
+            border-radius: 5px;
+            width: 30%;
+            height: 50px;
+        }
+        aside{
+            width: 95%;
+            height: auto;
+            text-align: center;
+            /* margin-top: 60px; */
+            margin: 20px;
+           
+            /* margin:60px; */
+        }
+        .asideimg{
+            display: flex;
+           
+
+        }
+        .asideimg img{
+            width: 80%;
+        }
+        .asideimg div:hover{
+            /* border: 10px  solid aqua;
+            border-radius: 10px; */
+            gap: 20px;
+            transform: scale(1.5);
+            transition: all 1s ease-in-out;
+            transform: rotate(360deg);
+        }
+
+        .Discover{
+            /* border: 1px solid; */
+            width: 90%;
+            margin: 30px;
+            margin: auto;
+            padding: 30px;
+            
+            background-color: rgb(192, 230, 215);
+            text-align: center;
+            border-radius: 10px;
+        }
+        /* .Discover div{
+            width: 400px;
+        } */
+        .Discover:hover{
+            background-color: white;
+            /* transform: scale(1.2); */
+            transition: all 2s ease-in-out;
+        }
+        .Discoverimg {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+        }
+        .Discover button{
+            margin: 30px;
+            background-color: rgb(66, 196, 152);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 40px;
+            width: 200px;
+        }
+        .Discover button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+
+        }
+        article{
+            display: flex;
+            flex-direction: row;
+            width: 94%;
+            height: auto;
+            background-color: rgb(66, 196, 152);
+            border-radius: 20px;
+           margin-top: 30px;
+            margin-left: 60px;
+        }
+        .articleheading{
+            color: white;
+            width: 60%;
+            font-size: 25px;
+            padding: 50px; 
+        }
+        .articleheading button{
+            width: 150px;
+            height: 40px;
+            color:rgb(66, 196, 152) ;
+            border: none;
+            font-weight: bolder;
+        }
+        .articleheading button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+        }
+        .articleimg img{
+            margin-top: 50px;
+            height: 500px;
+        }
+        article:hover{
+           background-color: aqua;
+           color: black;
+        }
+        @media screen and (min-width:200px) and (max-width:460px) {
+            body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(245, 242, 242);
+            background-image: url(./image/pexels-photo-220182.jpeg)
+        }
+        nav{
+            display: flex;
+            width: 95%;
+            background-color: rgb(13, 187, 218);
+            border-radius: 5px;
+            margin: auto;
+        }
+        .logo{
+            margin-left: 20px;
+            display: flex;
+            align-items: center; 
+            gap: 20px;
+            font-size: 30px;
+            
+
+        }
+        .navlinks{
+            
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+
+        }
+       
+        nav div img{
+            width: 25%;
+            border-radius: 50%;
+            
+        }
+        .navlinks a{
+        
+           display: none;
+          
+        }
+        .navsearch input{
+            width: 350px;
+            height: 30px;
+            border-radius: 5px;
+            border:none;
+            margin-top: 25px;
+            display: none;
+        }
+        .navsearch button{
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            border:none;
+            /* margin-top: 25px; */
+            font-weight: bolder;
+        }
+        .navsearch button:hover{
+            background-color: black;
+            color: white;
+        }
+        span{
+            display: block;
+            color: white;
+            font-size: 50px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        section{
+        
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            height:auto;
+            /* border: 1px solid; */
+            
+            border-radius: 5px;
+           }
+        .sectionheading {
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid; */
+            font-size: 20px;
+            width: 50%;
+            padding: 50px;
+            /* align-items: center; */
+            justify-content: center;
+            
+           
+        }
+        .sectionheading button{
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(123, 216, 216);
+
+        }
+        .sectionheading button:hover{
+            background-color: white;
+
+        }
+        .sectionimg{
+    
+            /* border: 1px solid; */
+            width: 95%;
+            margin: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+           
+            
+        }
+        .sectionimg div{
+            border: 1px solid  black;
+            margin: 30px;
+            padding: 80px;
+            border-radius: 10px;
+            border: none;
+            /* transform: scale(1.5);  */
+            background-color: white;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        }
+        .sectionimg div:hover{
+            background-color: aqua;
+            transition: all 1s ease-in-out;
+          transform: scale(1.2); 
+         color: white;
+          
+          
+        }
+
+        .sectionimg img{
+            border-radius: 5px;
+            width: 30%;
+            height: 50px;
+        }
+        aside{
+            width: 95%;
+            height: auto;
+            text-align: center;
+            /* margin-top: 60px; */
+            margin: auto;
+           
+            /* margin:60px; */
+        }
+        .asideimg{
+            display: flex;
+           
+
+        }
+        .asideimg img{
+            width: 80%;
+        }
+        .asideimg div:hover{
+            /* border: 10px  solid aqua;
+            border-radius: 10px; */
+            gap: 20px;
+            transform: scale(1.5);
+            transition: all 1s ease-in-out;
+            transform: rotate(360deg);
+        }
+
+        .Discover{
+            /* border: 1px solid; */
+            width: 70%;
+     
+            background-color: rgb(192, 230, 215);
+            text-align: center;
+            border-radius: 10px;
+        }
+        /* .Discover div{
+            width: 400px;
+        } */
+        .Discover:hover{
+            background-color: white;
+            /* transform: scale(1.2); */
+            transition: all 2s ease-in-out;
+        }
+        .Discoverimg {
+            display: grid;
+            
+
+            grid-template-columns: repeat(3,1fr);
+        }
+        .Discover button{
+            margin: 30px;
+            background-color: rgb(66, 196, 152);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 40px;
+            width: 200px;
+        }
+        .Discover button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+
+        }
+        article{
+            display: flex;
+            flex-direction: row;
+            width: 85%;
+            height: auto;
+            background-color: rgb(66, 196, 152);
+            border-radius: 20px;
+           margin: auto;
+        }
+        .articleheading{
+            color: white;
+            width: 40%;
+            font-size: 10px;
+            /* padding: 50px;  */
+        }
+        .articleheading button{
+            width: 150px;
+            height: 40px;
+            color:rgb(66, 196, 152) ;
+            border: none;
+            font-weight: bolder;
+        }
+        .articleheading button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+        }
+        .articleimg img{
+            width: 80px;
+            margin-top: 50px;
+            height: 200px;
+        }
+        article:hover{
+           background-color: aqua;
+           color: black;
+        }
+        }
+        @media screen and (min-width:461px) and (max-width:850px){
+            body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(245, 242, 242);
+            background-image: url(./image/pexels-photo-220182.jpeg)
+        }
+        nav{
+            display: flex;
+            width: 95%;
+            background-color: rgb(13, 187, 218);
+            border-radius: 5px;
+            margin: auto;
+        }
+        .logo{
+            margin-left: 20px;
+            display: flex;
+            align-items: center; 
+            gap: 20px;
+            font-size: 30px;
+
+        }
+        .navlinks{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+
+        }
+       
+        nav div img{
+            width: 25%;
+            border-radius: 50%;
+            
+        }
+        .navlinks a{
+           text-decoration: none;
+           color: white;
+           font-size: 30px;
+           display: none;
+          
+        }
+        .navsearch input{
+            width: 350px;
+            height: 30px;
+            border-radius: 5px;
+            border:none;
+            margin-top: 25px;
+            display: none;
+        }
+        .navsearch button{
+            width: 80px;
+            height: 30px;
+            margin: 30px;
+            border-radius: 5px;
+            border:none;
+            margin-top: 40px;
+            font-weight: bolder;
+        }
+        .navsearch button:hover{
+            background-color: black;
+            color: white;
+        }
+       
+        span{
+            display: block;
+            margin-top: 5px;
+            color: white;
+            font-size: 100px;
+        }
+        section{
+        
+            display: flex;
+            width: 50%;
+            margin: auto;
+            height:auto;
+            /* border: 1px solid; */
+            
+            border-radius: 5px;
+           }
+        .sectionheading {
+            display: flex;
+            flex-direction: column;
+            /* border: 1px solid; */
+            font-size: 20px;
+            width: 30%;
+            padding: 10px;
+            /* align-items: center; */
+            justify-content: center;
+            
+           
+        }
+        .sectionheading button{
+            width: 60%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(123, 216, 216);
+
+        }
+        .sectionheading button:hover{
+            background-color: white;
+
+        }
+        .sectionimg{
+    
+            /* border: 1px solid; */
+            width: 30%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            
+        }
+        .sectionimg div{
+            /* border: 1px solid ; */
+            margin: 10px;
+            padding: 40px;
+            border-radius: 10px;
+            border: none;
+            /* transform: scale(1.5);  */
+            background-color: white;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        }
+        .sectionimg div:hover{
+            background-color: aqua;
+            transition: all 1s ease-in-out;
+          transform: scale(1.2); 
+         color: white;
+          transform: translate(40px,40px);
+          
+        }
+
+        .sectionimg img{
+            border-radius: 5px;
+            width: 30%;
+            height: 50px;
+        }
+        aside{
+            width: 90%;
+            height: auto;
+            text-align: center;
+            /* margin-top: 60px; */
+            margin: 20px;
+           
+            /* margin:60px; */
+        }
+        .asideimg{
+            display: flex;
+           
+
+        }
+        .asideimg img{
+            width: 80%;
+        }
+        .asideimg div:hover{
+            /* border: 10px  solid aqua;
+            border-radius: 10px; */
+            gap: 20px;
+            transform: scale(1.5);
+            transition: all 1s ease-in-out;
+            transform: rotate(360deg);
+        }
+
+        .Discover{
+            /* border: 1px solid; */
+            width: 90%;
+            margin: 10px;
+            /* margin: auto; */
+            /* padding: 30px; */
+            
+            background-color: rgb(192, 230, 215);
+            text-align: center;
+            border-radius: 10px;
+        }
+        /* .Discover div{
+            width: 400px;
+        } */
+        .Discover:hover{
+            background-color: white;
+            /* transform: scale(1.2); */
+            transition: all 2s ease-in-out;
+        }
+        .Discoverimg {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+        }
+        .Discover button{
+            margin: 30px;
+            background-color: rgb(66, 196, 152);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 40px;
+            width: 200px;
+        }
+        .Discover button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+
+        }
+        article{
+            display: flex;
+            flex-direction: row;
+            width: 94%;
+            height: auto;
+            background-color: rgb(66, 196, 152);
+            border-radius: 20px;
+           margin-top: 10px;
+            margin-left: 10px;
+        }
+        .articleheading{
+            color: white;
+            width: 60%;
+            font-size: 25px;
+            padding: 50px; 
+        }
+        .articleheading button{
+            width: 150px;
+            height: 40px;
+            color:rgb(66, 196, 152) ;
+            border: none;
+            font-weight: bolder;
+        }
+        .articleheading button:hover{
+            color: white;
+            transform: scale(1.2);
+            color: black;
+        }
+        .articleimg img{
+            margin-top: 50px;
+            margin-left: 10px;
+            height: 500px;
+        }
+        article:hover{
+           background-color: aqua;
+           color: black;
+        }
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    
+    <Nav>
+        <div class="logo">
+            <img src="./image/grow img.png">Gorww
+        
+        </div>
+        <div class="navlinks">
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Explore</a>
+          <a href="">investing</a>
+          <a href="">Contact</a>
+        </div>
+        <div class="navsearch">
+            <input placeholder="Search">
+            <button>Login</button>
+        </div>
+        <span>&#8801;</span>
+    </Nav>
+    <section>
+        <div class="sectionheading">
+            <h1>Invest in IPO</h1>
+            <p>Trusted By Millions of Indians, Start Investing Today</p>
+            <button>GET STARTED</button>
+        </div>
+        <div class="sectionimg">
+            <div>
+                <img src="./image/highReturn.c5ac9dc8.svg">
+                <h1>Mutual Funds</h1>
+            </div>
+             <div>
+                <img src="./image/largeCap.951d37e6.svg">
+                <h1>Stocts</h1>
+             </div>
+             <div>
+                <img src="./image/midCap.f767368f.svg">
+                <h1>Futures & Options</h1>
+             </div>
+             <div>
+                <img src="./image/sipWith500.373c6105.svg">
+                <h1>US Stocks</h1>
+             </div>
+             <div>
+                <img src="./image/smallCap.951874c8.svg">
+                <h1>IPOs</h1>
+             </div>
+             <div>
+                <img src="./image/highReturn.c5ac9dc8.svg">
+                <h1>fixed Deposite</h1>
+             </div>  
+        </div>
+    </section>
+    <aside>
+        <h1>Keep learning. Keep growing.</h1>
+        <div class="asideimg">
+            <div>
+                <img src="./image/blog1.webp"><h3>How to Select/Pick Stocks For Intraday</h3> 
+            </div>
+            <div>
+                <img src="./image/blog2.18945d6c.webp"><h3>Begainers Guide to Mutual Funds</h3>
+            </div>
+            <div>
+                <img src="./image/blog3.fc992b58.webp"><h3>How to Diversify in the time of Market Volatillity</h3>        </div>
+        </div>
+    </aside>
+    <div class="Discover"> 
+        <h1>Discover Mutual Funds</h1>
+        <p>Search Mutual Funds,AMCs etc.</p>
+        <div class="Discoverimg">
+        <div  >
+            <img src="./image/highReturn.c5ac9dc8.svg">
+            <p>High Return</p>
+        </div>
+        <div>
+            <img src="./image/sipWith500.373c6105.svg">
+            <p>SIP with 500</p>
+        </div>
+        <div>
+            <img src="./image/taxSaving.fc463641.svg">
+            <p>Tax Savings</p>
+        </div>
+        <div>
+            <img src="./image/largeCap.951d37e6.svg">
+            <p>large cap</p>
+        </div>
+        <div>
+            <img src="./image/midCap.f767368f.svg">
+            <p>Mid Cap</p>
+        </div>
+        <div>
+            <img src="./image/smallCap.951874c8.svg">
+            <p>Small Cap</p>
+        </div>
+    </div>
+        <button>Explore all Mutual Funds</button>
+    </div>
+    <article>
+        <div class="articleheading">
+            <h1>We are with you at every stey</h1>
+            <p>For any query you have, find answer quikly on our help & Support. Need a little bit more help?<br>We're happy talk via call or chat.</p>
+            <button>Get in Touch</button>
+        </div>
+        <div class="articleimg">
+            <img src="./image/dematSupportImg.webp">
+        </div>
+    </article>
+    <h1><a href="task4calculator.html">task4</a></h1>
+    
+</body>
+</html>
